@@ -1,0 +1,89 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Metric</title>
+</head>
+<body style="background-image: url('{%static 'images/B.jpg'%}');
+     background-size: cover;
+     background-position: center;
+     font-family: poppins;">
+<center>
+
+    <form method="post" style="width: 500px;
+     height: 290px;
+     margin: 60px auto 0;
+     background: rgba(0,0,0,0.6);
+     text-align: center;
+     padding: 35px;
+     border: 3px solid #fff;
+     border-radius: 70px 0 70px 0;">
+        {%csrf_token%}
+
+        <label for="" style="text-align: left;
+     color: #fff;
+     text-transform: uppercase;
+     font-weight: bold;">Name</label>
+        <input style=" width: 150px;
+        color: white;
+     height: 40px;
+     border-radius: 15px 0 15px 0;
+     border: 2px solid white;
+     margin-bottom: 15px;
+     background: transparent;" type="text" name="name" id="name" placeholder="Enter your name"  required><br>
+        <label for="" style="text-align: left;
+     color: #fff;
+     text-transform: uppercase;
+     font-weight: bold;">Gender</label>
+        <input type="text" name="gender" id="gender" placeholder="Type your gender" style=" width: 150px; color: white;
+     height: 40px;
+     border-radius: 15px 0 15px 0;
+     border: 2px solid white;
+     margin-bottom: 15px;
+     background: transparent;" required><br>
+        <label for="" style="text-align: left;
+     color: #fff;
+     text-transform: uppercase;
+     font-weight: bold;">Weight</label>
+        <input type="text" name="weight" id="weight" placeholder="weight in KG's" style=" width: 150px; color: white;
+     height: 40px;
+     border-radius: 15px 0 15px 0;
+     border: 2px solid white;
+     margin-bottom: 15px;
+     background: transparent;" required><br>
+        <label for="" style="text-align: left;
+     color: #fff;
+     text-transform: uppercase;
+     font-weight: bold;">Height</label>
+        <input type="text" name="height" id="height" placeholder="hight in meters" style=" width: 150px; color: white;
+     height: 40px;
+     border-radius: 15px 0 15px 0;
+     border: 2px solid white;
+     margin-bottom: 15px;
+     background: transparent;" required><br>
+        <button type="submit" style="display: block;
+      height: 40px;
+      line-height: 40px;
+      background: red;
+      border-radius: 25px;
+      color: #fff;
+      text-transform: uppercase;
+      margin-top: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 3px;">Caluclate</button>
+
+        {% if bmi %}
+        <div class="a1" style="color: black; font-size: 20px;">
+      <h2>Result</h2>
+      <h4>Your BMI = {{bmi}} kg/m2  |  Body type: {{state}}</h4>
+            </div>
+      {% endif %}
+
+
+    </form>
+
+</center>
+</body>
+</html>
